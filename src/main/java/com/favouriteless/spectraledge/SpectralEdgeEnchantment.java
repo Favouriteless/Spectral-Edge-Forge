@@ -1,23 +1,22 @@
 package com.favouriteless.spectraledge;
 
-import net.minecraft.enchantment.DamageEnchantment;
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
-import net.minecraft.enchantment.EnchantmentType;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.AxeItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.Hand;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.enchantment.DamageEnchantment;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentCategory;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 
 public class SpectralEdgeEnchantment extends Enchantment {
 
-	protected SpectralEdgeEnchantment(EquipmentSlotType... slots) {
-		super(Rarity.COMMON, EnchantmentType.WEAPON, slots);
+	protected SpectralEdgeEnchantment() {
+		super(Rarity.COMMON, EnchantmentCategory.WEAPON, new EquipmentSlot[] { EquipmentSlot.MAINHAND });
 	}
 
 	@Override
@@ -52,8 +51,8 @@ public class SpectralEdgeEnchantment extends Enchantment {
 			float damageMultiplier = SpectralEdgeConfig.DAMAGE_PERCENT.get() * EnchantmentHelper.getEnchantmentLevel(SpectralEdge.SPECTRAL_EDGE.get(), attacker);
 			float bonusDamage = (float)livingTarget.getAttribute(Attributes.ATTACK_DAMAGE).getValue() * damageMultiplier;
 
-			if(attacker instanceof PlayerEntity){
-				livingTarget.hurt(DamageSource.playerAttack((PlayerEntity)attacker), bonusDamage);
+			if(attacker instanceof Player){
+				livingTarget.hurt(DamageSource.playerAttack((Player)attacker), bonusDamage);
 			}
 			else {
 				livingTarget.hurt(DamageSource.mobAttack(attacker), bonusDamage);
