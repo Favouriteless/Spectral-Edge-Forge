@@ -1,0 +1,13 @@
+modLoader="javafml" #mandatory
+loaderVersion="[36,)" #mandatory This is typically bumped every Minecraft version by Forge. See our download page for lists of versions.
+license="All rights reserved"
+[[mods]] #mandatory
+modId="spectraledge" #mandatory
+version="${file.jarVersion}" #mandatory
+displayName="Spectral Edge" #mandatory
+logoFile="examplemod.png" #optional
+credits="Requested by EternalOne" #optional
+authors="Favouriteless" #optional
+description='''
+Adds the Spectral Edge enchantment, an alternative to sharpness which uses a percentage increase to damage.
+'''
