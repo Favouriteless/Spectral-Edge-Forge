@@ -1,7 +1,5 @@
 package com.favouriteless.spectraledge;
 
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.inventory.Slot;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.ModLoadingContext;
