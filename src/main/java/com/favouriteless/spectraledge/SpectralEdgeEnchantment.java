@@ -45,20 +45,4 @@ public class SpectralEdgeEnchantment extends Enchantment {
 		return pStack.getItem() instanceof AxeItem || super.canEnchant(pStack);
 	}
 
-	@Override
-	public void doPostAttack(LivingEntity attacker, Entity target, int pLevel) {
-		if (target instanceof LivingEntity) {
-			LivingEntity livingTarget = (LivingEntity)target;
-			float damageMultiplier = SpectralEdgeConfig.DAMAGE_PERCENT.get() * EnchantmentHelper.getEnchantmentLevel(SpectralEdge.SPECTRAL_EDGE.get(), attacker);
-			float bonusDamage = (float)livingTarget.getAttribute(Attributes.ATTACK_DAMAGE).getValue() * damageMultiplier;
-
-			if(attacker instanceof PlayerEntity){
-				livingTarget.hurt(DamageSource.playerAttack((PlayerEntity)attacker), bonusDamage);
-			}
-			else {
-				livingTarget.hurt(DamageSource.mobAttack(attacker), bonusDamage);
-			}
-		}
-	}
-
 }
