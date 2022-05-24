@@ -2,17 +2,10 @@ package com.favouriteless.spectraledge;
 
 import net.minecraft.enchantment.DamageEnchantment;
 import net.minecraft.enchantment.Enchantment;
-import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.enchantment.EnchantmentType;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.DamageSource;
-import net.minecraft.util.Hand;
 
 public class SpectralEdgeEnchantment extends Enchantment {
 

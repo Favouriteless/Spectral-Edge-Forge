@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "com.favouriteless.spectraledge.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "modid.refmap.json",
+  "mixins": [
+    "ItemStackMixin",
+    "LivingEntityMixin"
+  ],
+  "client": [
+  ],
+  "minVersion": "0.8"
+}
