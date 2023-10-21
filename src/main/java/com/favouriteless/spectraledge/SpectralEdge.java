@@ -11,7 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 @Mod(SpectralEdge.MOD_ID)
-public class SpectralEdge
+public class    SpectralEdge
 {
     public static final String MOD_ID = "spectraledge";
     public static final DeferredRegister<Enchantment> ENCHANTMENT_REGISTRY = DeferredRegister.create(ForgeRegistries.ENCHANTMENTS, MOD_ID);
